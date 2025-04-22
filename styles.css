@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+body .custom-navbar {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+body .custom-navbar .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  min-height: 130px;
+  padding: 0 10px;
+}
+body .custom-navbar .logo img {
+  width: 130px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+body .custom-navbar .logo img:hover {
+  transform: rotate(360deg) scale(1.1);
+  opacity: 0.8;
+}
+body .custom-navbar .nav-left, body .custom-navbar .nav-right {
+  display: flex;
+}
+body .custom-navbar .nav-left a, body .custom-navbar .nav-right a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0 12px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+body .custom-navbar .nav-left a::after, body .custom-navbar .nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #c34dff;
+  transition: width 0.3s ease;
+}
+body .custom-navbar .nav-left a:hover, body .custom-navbar .nav-right a:hover {
+  color: #af6ad4;
+}
+body .custom-navbar .nav-left a:hover::after, body .custom-navbar .nav-right a:hover::after {
+  width: 100%;
+}
+body .hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+body .hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body .hero .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease-out 0.5s forwards;
+  margin-top: 200px;
+}
+body .hero .content h1 {
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 50px;
+  animation: fadeInUp 1.5s ease-out 1s forwards;
+}
+body .hero .content p {
+  font-size: 1.5rem;
+  color: #ccc;
+  animation: fadeIn 1.5s ease-out 1.2s forwards;
+}
+body .hero .content .hero .content {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.3s ease;
+}
+body .hero .content .btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 480px;
+}
+body .hero .content .btn-wrapper .btn {
+  position: relative;
+  display: inline-block;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+body .hero .content .btn-wrapper .btn::before, body .hero .content .btn-wrapper .btn::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+body .hero .content .btn-wrapper .btn::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+}
+body .hero .content .btn-wrapper .btn::after {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 0;
+}
+body .hero .content .btn-wrapper .btn:hover {
+  color: white;
+}
+body .hero .content .btn-wrapper .btn:hover::before {
+  width: 300px;
+}
+body .hero .content .btn-wrapper .btn:hover::after {
+  height: 450px;
+}
+body .hero .content .btn-wrapper .primary {
+  margin-right: 80px;
+}
+body .hero .content .btn-wrapper .secondary {
+  margin-right: 80px;
+}
+body .hero__scroll {
+  position: absolute;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+body .hero__scroll__icon__block {
+  margin-bottom: 10px;
+}
+body .hero__scroll__icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  animation: scrollArrow 1s ease-in-out infinite;
+}
+body .hero__scroll__text {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+body .hero__scroll__text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #c34dff;
+  transition: width 0.3s ease;
+}
+body .hero__scroll__text:hover {
+  color: #af6ad4;
+}
+body .hero__scroll__text:hover::after {
+  width: 100%;
+}
+body .hero__scroll__text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  opacity: 0.7;
+}
+@keyframes scrollArrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+body .video-container {
+  margin-top: 150px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 650px;
+  transition: all 1s ease-out;
+}
+body #video-sec {
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+  object-position: center;
+  transition: transform 1s ease-out;
+}
+body .video-container.scrolled #video-sec {
+  transform: scale(1.3);
+  object-position: center center;
+}
+body .video-container.scrolled {
+  transform: scale(1.3);
+  transition: transform 1s ease-out;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+body .info-trio-section {
+  margin-top: 10%;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+body .info-heading {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  opacity: 0;
+  color: #7e7e8a;
+  transform: translateY(30px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body .info-list {
+  padding-right: 1.4rem;
+  color: #7e7e8a;
+  font-weight: 300;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+body .info-list li {
+  margin-bottom: 1.1rem;
+}
+body .info-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+body footer {
+  color: white;
+}
+
+/*# sourceMappingURL=styles.css.map */

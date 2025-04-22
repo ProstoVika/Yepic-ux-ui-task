@@ -14,6 +14,7 @@ function handleHeroScroll() {
     const heroContent = document.querySelector('.hero .content');
     const h1 = heroContent.querySelector('h1');
     const p = heroContent.querySelector('p');
+    const buttons = heroContent.querySelectorAll('button');
     const scrollPosition = window.scrollY;
     const clipValue = Math.min(scrollPosition / 2, 100);
 
@@ -24,7 +25,6 @@ function handleHeroScroll() {
         button.style.clipPath = `inset(${clipValue}px 0 0 0)`;
     });
 }
-
 
 window.addEventListener('scroll', handleVideoScroll);
 document.addEventListener('scroll', handleHeroScroll);
